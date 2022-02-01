@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "eee61a13-9d51-41ce-a95a-2951b298e178": {
+      "ProjectGuid": "eee61a13-9d51-41ce-a95a-2951b298e178",
+      "DisplayName": "IntroMVC",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
