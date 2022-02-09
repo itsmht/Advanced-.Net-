@@ -53,6 +53,49 @@ namespace EFStudent.Controllers
                         select s).ToList();
             return View(data);
         }
+        [HttpGet]
+        public ActionResult Edit(int Id)
+        {
+            EFEntities db = new EFEntities();
+            var data = (from s in db.Students
+                        where s.id == Id
+                        select s).FirstOrDefault();
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Edit(Student sub_s)
+        {
+            EFEntities db = new EFEntities();
+            var data = (from s in db.Students
+                        where s.id == sub_s.id
+                        select s).FirstOrDefault();
+            db.Entry(data).CurrentValues.SetValues(sub_s);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Delete(int Id)
+        {
+            EFEntities db = new EFEntities();
+            var data = (from s in db.Students
+                        where s.id == Id
+                        select s).FirstOrDefault();
+            
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Delete(Student sub_s)
+        {
+            EFEntities db = new EFEntities();
+            var data = (from s in db.Students
+                        where s.id == sub_s.id
+                        select s).FirstOrDefault();
+            
+            db.Students.Remove(data);
+            db.SaveChanges();
+            return View();
+        }
+
     }
     
 }

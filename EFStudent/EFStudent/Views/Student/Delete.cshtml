@@ -1,0 +1,16 @@
+﻿@model EFStudent.Models.Database.Student
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<form action="/Student/Create" method="post">
+    <input type="hidden" name="id" value="@Model.id" class="form-control">
+    <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="Name">
+    <input type="text" name="uID" value="@Model.uID" class="form-control" placeholder="University ID">
+    <input type="text" name="DOB" value="@Model.DOB" class="form-control" placeholder="Date of Birth">
+    <input type="text" name="CGPA" value="@Model.CGPA" class="form-control" placeholder="CGPA">
+    <input type="submit" value="Delete" />
+
+</form>
+

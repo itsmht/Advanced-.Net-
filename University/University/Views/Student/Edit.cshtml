@@ -1,0 +1,16 @@
+﻿@model University.Models.Database.Student
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<form action="/Student/Edit" method="post">
+
+    <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="Name">
+    <input type="hidden" name="ID" value="@Model.id" />
+    <input type="text" name="DOB" value="@Model.DOB" class="form-control" placeholder="Date of Birth">
+    <input type="text" name="CGPA" value="@Model.CGPA" class="form-control" placeholder="CGPA">
+    <input type="submit" value="Edit" />
+
+</form>
+

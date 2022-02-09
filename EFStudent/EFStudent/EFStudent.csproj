@@ -211,6 +211,8 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Scholarship.cshtml" />
     <Content Include="Views\Student\SpecialDiscount.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

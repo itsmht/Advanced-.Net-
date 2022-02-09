@@ -1,0 +1,29 @@
+﻿@model List<University.Models.Database.Student>
+@{
+    ViewBag.Title = "Scholarship";
+}
+
+<h2>Scholarship</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>CGPA</th>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.id</td>
+            <td>@s.Name</td>
+            <td>@s.DOB</td>
+            <td>@s.CGPA</td>
+        </tr>
+    }
+
+</table>
+<a href="/Student/Index">Student List</a>
+<br />
+<a href="/Student/SpecialDiscount">Special Discount</a>
+<br />
+<a href="/Student/Create">Add Another Student</a>

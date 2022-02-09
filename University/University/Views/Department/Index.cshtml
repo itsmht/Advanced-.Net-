@@ -1,0 +1,25 @@
+﻿@model List<University.Models.Database.Department>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Department Index</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.id</td>
+            <td>@s.Name></td>
+            <td><a class="btn btn-info" href="/Student/Edit/@s.id">Edit</a></td>
+            <td><a class="btn btn-danger" href="/Student/Delete/@s.id">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/Department/Create">Add Another Department</a>
+

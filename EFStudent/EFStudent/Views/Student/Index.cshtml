@@ -11,15 +11,19 @@
         <th>University ID</th>
         <th>Date of Birth</th>
         <th>CGPA</th>
+        <th></th>
+        <th></th>
     </tr>
     @foreach (var s in Model)
             {
                 <tr>
                     
-                    <td>@s.Name</td>
+                    <td>@s.Name></td>
                     <td>@s.uID</td>
                     <td>@s.DOB</td>
                     <td>@s.CGPA</td>
+                    <td><a class="btn btn-info" href="/Student/Edit/@s.id">Edit</a></td>
+                    <td><a class="btn btn-danger" href="/Student/Delete/@s.id">Delete</a></td>
                 </tr>
             }
 
