@@ -1,0 +1,15 @@
+﻿@model Ecom.Models.Database.Product
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<h2>Edit</h2>
+<form action="/Product/Delete" method="post">
+    <input type="hidden" name="ID" value="@Model.id" class="form-control" placeholder="ID" />
+    <input type="hidden" name="Name" value="@Model.Name" class="form-control" placeholder="Name" />
+    <input type="hidden" name="Price" value="@Model.Price" class="form-control" placeholder="Price" />
+    <input type="hidden" name="Quantity" value="@Model.Quantity" class="form-control" placeholder="Quantity" />
+    <input type="submit" value="Delete" />
+
+</form>

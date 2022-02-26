@@ -1,0 +1,36 @@
+﻿@model List<Ecom.Models.Database.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var p in Model)
+            {
+<tr>
+    <td>@p.id</td>
+    <td>@p.Name</td>
+    <td>@p.Price</td>
+    <td>@p.Quantity</td>
+    <td><a class="btn btn-success" href="/Product/Cart/@p.id">Add to Cart</a></td>
+    <td><a class="btn btn-info" href="/Product/Edit/@p.id">Edit</a></td>
+    <td><a class="btn btn-danger" href="/Product/Delete/@p.id">Delete</a></td>
+
+
+
+
+</tr>
+            }
+</table>
+<a href="/Product/Create">Create Page</a>

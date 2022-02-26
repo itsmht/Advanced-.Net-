@@ -1,0 +1,15 @@
+﻿@model Ecom.Models.Database.Product
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form action="/Product/Create" method="post">
+    <input type="text" name="ID" class="form-control" placeholder="ID" />
+    <input type="text" name="Name" class="form-control" placeholder="Name" />
+    <input type="text" name="Price" class="form-control" placeholder="Price" />
+    <input type="text" name="Quantity" class="form-control" placeholder="Quantity" />
+    <input type="submit" value="Add Product" />
+
+</form>
+<a href="/Product/Index">Index</a>

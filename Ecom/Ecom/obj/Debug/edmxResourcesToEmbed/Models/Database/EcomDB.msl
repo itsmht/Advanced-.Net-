@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EcomModelStoreContainer" CdmEntityContainer="EcommerceEntities">
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="EcomModel.Cart">
+        <MappingFragment StoreEntitySet="Carts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="EcomModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="EcomModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

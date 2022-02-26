@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcomModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Carts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="order_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="cart_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Carts_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Carts" Type="Self.Carts" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Carts">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Carts_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Carts" Type="Self.Carts" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Carts">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Carts">
+    <End Role="Carts" Type="Self.Carts" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Carts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EcomModelStoreContainer">
+    <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Carts_Orders" Association="Self.FK_Carts_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Carts" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Carts_Products" Association="Self.FK_Carts_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Carts" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Carts" Association="Self.FK_Orders_Carts">
+      <End Role="Carts" EntitySet="Carts" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

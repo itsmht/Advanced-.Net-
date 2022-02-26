@@ -1,0 +1,14 @@
+﻿@model Ecom.Models.Database.Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<form action="/Product/Edit" method="post">
+    <input type="hidden" name="ID" value="@Model.id" class="form-control" placeholder="ID" />
+    <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="Name" />
+    <input type="text" name="Price" value="@Model.Price" class="form-control" placeholder="Price" />
+    <input type="text" name="Quantity" value="@Model.Quantity" class="form-control" placeholder="Quantity" />
+    <input type="submit" value="Edit" />
+
+</form>
